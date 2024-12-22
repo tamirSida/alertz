@@ -7,7 +7,7 @@ const translations = {
     en: {
         timeLeft: "Time left",
         distanceToShelter: "Directions to shelter",
-        areYouSafe: "Are you okay? If you don't reply within 60 seconds, emergency services will be dispatched to your location.",
+        areYouSafe: "Are you safe? If you don't reply in time, emergency services will be dispatched to your location.",
         imSafe: "I'm Safe",
         dispatchEmergency: "Dispatch Emergency Services",
         timeLeftToRespond: "Time left to respond",
@@ -216,7 +216,7 @@ document.getElementById("get-started").addEventListener("click", () => {
 
 // Help Button
 document.getElementById("help").addEventListener("click", () => {
-    alert("This app shows you the location of the nearest shelter during an attack and prompts you if you are okay. If not, it dispatches emergency services.");
+    alert("This app shows you the location of the nearest shelter during a missile attack and prompts you if you are okay after the missile falls.\n \n If you do not respond emergency services will be dispatched to your location.\n \n Default time for auto dispatch: 60 seconds, this can be changed or disabled.");
 });
 
 // Set Timer Button
