@@ -1,5 +1,6 @@
 // Store selected language
 let currentLanguage = "en"; // Default language is English
+let emergencyTimerValue = 60; // Default timer value
 
 // Translations for page-specific content
 const translations = {
@@ -45,7 +46,7 @@ function toggleLightDarkMode() {
 function toggleFontSize() {
     const container = document.querySelector(".container");
     const currentSize = window.getComputedStyle(container).fontSize;
-    container.style.fontSize = currentSize === "16px" ? "18px" : "16px";
+    container.style.fontSize = currentSize === "16px" ? "22px" : "16px";
 }
 
 // Add Translation Selector
@@ -164,7 +165,7 @@ document.getElementById("get-started").addEventListener("click", () => {
                         </p>
                         <div style="text-align: center; margin: 10px;">
                             <span id="emergency-timer-text">${translations[currentLanguage].timeLeftToRespond}:</span>
-                            <span id="emergency-timer">60</span> seconds
+                            <span id="emergency-timer">${emergencyTimerValue}</span> seconds
                         </div>
                         <div style="display: flex; justify-content: space-around; margin-top: 20px;">
                             <button id="im-safe" style="padding: 10px; border: none; border-radius: 5px; background-color: #28a745; color: white; cursor: pointer;">
@@ -186,7 +187,7 @@ document.getElementById("get-started").addEventListener("click", () => {
                     document.getElementById("dark-mode-toggle").addEventListener("click", toggleLightDarkMode);
                     document.getElementById("font-size-toggle").addEventListener("click", toggleFontSize);
 
-                    let emergencyCountdown = 60;
+                    let emergencyCountdown = emergencyTimerValue;
                     const emergencyTimer = document.getElementById("emergency-timer");
                     const emergencyInterval = setInterval(() => {
                         emergencyCountdown--;
@@ -211,4 +212,23 @@ document.getElementById("get-started").addEventListener("click", () => {
                 }
             }, 1000);
         });
+});
+
+// Help Button
+document.getElementById("help").addEventListener("click", () => {
+    alert("This app shows you the location of the nearest shelter during an attack and prompts you if you are okay. If not, it dispatches emergency services.");
+});
+
+// Set Timer Button
+document.getElementById("set-timer").addEventListener("click", () => {
+    const timerInput = document.getElementById("timer-input").value;
+    if (timerInput == -1) {
+        emergencyTimerValue = Infinity;
+        alert("Timer set to never dispatch emergency services.");
+    } else if (timerInput && !isNaN(timerInput) && timerInput > 0) {
+        emergencyTimerValue = parseInt(timerInput);
+        alert(`Timer set to ${emergencyTimerValue} seconds.`);
+    } else {
+        alert("Please enter a valid number greater than 0 or -1.");
+    }
 });

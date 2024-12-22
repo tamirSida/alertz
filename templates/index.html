@@ -16,16 +16,24 @@
         <img src="{{ url_for('static', filename='rocket_logo.png') }}" alt="Rocket Logo" class="logo" id="rocket-logo">
 
         <!-- Language Selector -->
-        <div class="language-selector">
-            <img src="{{ url_for('static', filename='icons/english_flag.png') }}" alt="English" id="lang-en">
-            <img src="{{ url_for('static', filename='icons/hebrew_flag.png') }}" alt="Hebrew" id="lang-he">
-            <img src="{{ url_for('static', filename='icons/russian_flag.png') }}" alt="Russian" id="lang-ru">
+        <div style="text-align: center; margin-bottom: 10px;">
+            <p>Supported Languages:</p>
+            <div class="language-selector">
+                <img src="{{ url_for('static', filename='icons/english_flag.png') }}" alt="English" id="lang-en">
+                <img src="{{ url_for('static', filename='icons/hebrew_flag.png') }}" alt="Hebrew" id="lang-he">
+                <img src="{{ url_for('static', filename='icons/russian_flag.png') }}" alt="Russian" id="lang-ru">
+            </div>
         </div>
 
-        <!-- Buttons -->
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-        <button id="font-size-toggle">Toggle Font Size</button>
+        <!-- Timer Input -->
+        <div style="margin: 10px; text-align: center;">
+            <label for="timer-input">Emergency services auto dispatch to your location in:</label>
+            <input type="text" id="timer-input" placeholder="input seconds (-1 means never)" style="margin: 10px; padding: 5px; width: calc(100% - 20px);">
+        </div>
+        <button id="set-timer">Set Timer</button>
         <button id="get-started">Get started</button>
+        <button id="save-settings">Save Settings</button>
+        <button id="help">Help</button>
 
         <!-- Alert Section -->
         <div id="alert-section" style="display:none;">

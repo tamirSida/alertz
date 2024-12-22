@@ -48,6 +48,12 @@ button:hover {
     background-color: #c82333;
 }
 
+/* Add this for the active state */
+button:active {
+    background-color: #a71d2a;
+    transform: scale(0.98);
+}
+
 /* Language Selector */
 .language-selector {
     display: flex;
