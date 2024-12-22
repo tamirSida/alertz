@@ -126,7 +126,7 @@ document.getElementById("get-started").addEventListener("click", () => {
             document.getElementById("font-size-toggle").addEventListener("click", toggleFontSize);
 
             // Initialize Mapbox map
-            mapboxgl.accessToken = 'pk.eyJ1IjoidGFtaXJzaWRhIiwiYSI6ImNseGdzcWZkazE0bmwya3F0dTkwbTVuYjUifQ.hc0EV66hxiy602HJHOljQA';
+            mapboxgl.accessToken = mapboxApiKey;
             const map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',

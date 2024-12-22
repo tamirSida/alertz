@@ -1,6 +1,13 @@
 from flask import Flask, render_template, jsonify, request
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
+
+# Get the API key from environment variable
+MAPBOX_API_KEY = os.getenv('MAPBOX_API_KEY')
 
 translations = {
     "en": {"title": "ALERTZ", "description": "Stay safe with real-time missile alerts and guidance."},
@@ -10,7 +17,7 @@ translations = {
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", mapbox_api_key=MAPBOX_API_KEY)
 
 @app.route("/translate", methods=["POST"])
 def translate():
