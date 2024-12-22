@@ -1,0 +1,78 @@
+/* Default (Dark Mode) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 375px; /* iPhone width */
+    height: 667px; /* iPhone height */
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    position: relative;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+/* Language Selector */
+.language-selector {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.language-selector img {
+    width: 30px;
+    height: auto;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Light Mode Styles (container only) */
+.container.light-mode {
+    background-color: white;
+    color: black;
+}
+
+button.light-mode {
+    background-color: #007bff;
+    color: white;
+}
+
+button.light-mode:hover {
+    background-color: #0056b3;
+}

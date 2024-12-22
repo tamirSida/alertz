@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALERTZ App Prototype</title>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.css' rel='stylesheet' />
+</head>
+<body>
+    <div class="container">
+        <h1 id="app-title">ALERTZ</h1>
+        <p id="app-description">Stay safe with real-time missile alerts and guidance.</p>
+        <img src="{{ url_for('static', filename='rocket_logo.png') }}" alt="Rocket Logo" class="logo" id="rocket-logo">
+
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <img src="{{ url_for('static', filename='icons/english_flag.png') }}" alt="English" id="lang-en">
+            <img src="{{ url_for('static', filename='icons/hebrew_flag.png') }}" alt="Hebrew" id="lang-he">
+            <img src="{{ url_for('static', filename='icons/russian_flag.png') }}" alt="Russian" id="lang-ru">
+        </div>
+
+        <!-- Buttons -->
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <button id="font-size-toggle">Toggle Font Size</button>
+        <button id="get-started">Get started</button>
+
+        <!-- Alert Section -->
+        <div id="alert-section" style="display:none;">
+            <div id="alert-message"></div>
+            <div id="shelter-info"></div>
+            <div id="countdown-timer"></div>
+            <div id="map"></div>
+            <div id="safety-prompt" style="display:none;">
+                <p>Are you safe?</p>
+                <button id="safe-button">I'm safe</button>
+                <p id="emergency-timer"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.0/mapbox-gl-directions.js'></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
